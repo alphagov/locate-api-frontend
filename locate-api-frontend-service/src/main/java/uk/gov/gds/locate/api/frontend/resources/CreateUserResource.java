@@ -2,6 +2,7 @@ package uk.gov.gds.locate.api.frontend.resources;
 
 import com.google.common.collect.ImmutableList;
 import com.mongodb.MongoException;
+import com.yammer.dropwizard.auth.Auth;
 import com.yammer.metrics.annotation.Timed;
 import uk.gov.gds.locate.api.frontend.dao.AuthorizationTokenDao;
 import uk.gov.gds.locate.api.frontend.exceptions.LocateWebException;
@@ -33,7 +34,7 @@ public class CreateUserResource {
     @GET
     @Timed
     @Produces(MediaType.TEXT_HTML)
-    public CreateUserView createUser() {
+    public CreateUserView createUser(@Auth String user) {
         return new CreateUserView();
     }
 
@@ -41,7 +42,7 @@ public class CreateUserResource {
     @Timed
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public AuthorizationToken createUserFromJson(CreateUserRequest request) throws Exception {
+    public AuthorizationToken createUserFromJson(@Auth String user, CreateUserRequest request) throws Exception {
 
         List<String> errors = validateRequest(request);
 
@@ -68,6 +69,7 @@ public class CreateUserResource {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_HTML)
     public CompleteView createUserFromForm(
+            @Auth String user,
             @FormParam("email") String email,
             @FormParam("name") String name,
             @FormParam("organisation") String organisation,

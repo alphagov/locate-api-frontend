@@ -2,6 +2,10 @@
 ### Locate API configuration
 ###
 
+# override in prod!!
+username: username
+
+password: password
 
 http:
 

@@ -76,7 +76,7 @@ public class LocateApiFrontendService extends Service<LocateApiFrontendConfigura
         /**
          * Authentication
          */
-        environment.addProvider(new BasicAuthProvider(new BasicAuthAuthenticator(), "create-user"));
+        environment.addProvider(new BasicAuthProvider(new BasicAuthAuthenticator(configuration), "create-user"));
 
         /**
          * Better exception mappings

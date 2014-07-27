@@ -15,7 +15,25 @@ public class LocateApiFrontendConfiguration extends Configuration {
     @JsonProperty
     private MongoConfiguration mongoConfiguration = new MongoConfiguration();
 
+    @Valid
+    @NotNull
+    @JsonProperty
+    private String username;
+
+    @Valid
+    @NotNull
+    @JsonProperty
+    private String password;
+
     public MongoConfiguration getMongoConfiguration() {
         return mongoConfiguration;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }
