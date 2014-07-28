@@ -2,6 +2,7 @@ package uk.gov.gds.locate.api.frontend.model;
 
 
 public enum QueryType {
+    ELECTORAL("electoral"),
     RESIDENTIAL("residential"),
     COMMERCIAL("commercial"),
     RESIDENTIAL_AND_COMMERCIAL("residentialAndCommercial"),

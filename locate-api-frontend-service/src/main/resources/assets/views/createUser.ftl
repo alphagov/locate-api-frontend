@@ -61,6 +61,13 @@
                 Residential and commercial
             </label>
 
+             <label for="electoral_data" class="selectable">
+                            <input id="electoral_data" name="queryType" value="electoral"
+                                   class="radio validate" data-validation-name="electoral" data-validation-type="field"
+                                   data-validation-rules="nonEmpty" type="radio">
+                            Electoral
+                        </label>
+
             <label for="all_data" class="selectable">
                 <input id="all_data" name="queryType" value="all" class="radio validate" data-validation-name="all"
                        data-validation-type="field" data-validation-rules="nonEmpty" type="radio">
