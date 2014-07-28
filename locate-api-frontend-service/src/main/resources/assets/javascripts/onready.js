@@ -59,11 +59,11 @@
          e.preventDefault();
 
         function printSuccess(obj) {
-            var html = '<hr/><div class="warning">';
+            var html = '<hr/><header class="complete">';
             html += "This is your credential for the locate API"
-            html += '<p>Note this down now as there is no way to access it again</p>';
+            html += '<p>Note this down now as there is no way to access it again!</p>';
             html += "<p><em>" + obj.token + "</em></p>";
-            html += '</div>';
+            html += '</header>';
             return html;
         }
 
