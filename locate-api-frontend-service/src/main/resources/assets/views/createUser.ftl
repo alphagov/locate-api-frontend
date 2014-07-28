@@ -44,7 +44,7 @@
             <label for="residential_data" class="selectable">
                 <input id="residential_data" name="queryType" value="residential" class="radio validate"
                        data-validation-name="residential" data-validation-type="field" data-validation-rules="nonEmpty"
-                       type="radio" checked>
+                       type="radio">
                 Residential
             </label>
 
@@ -88,7 +88,7 @@
             </label>
             <label for="full" class="selectable">
                 <input id="full" name="dataType" value="all" class="radio" data-validation-name="full"
-                       data-validation-type="field" data-validation-rules="nonEmpty" type="radio" checked>
+                       data-validation-type="field" data-validation-rules="nonEmpty" type="radio">
                 Full
             </label>
         </fieldset>  
