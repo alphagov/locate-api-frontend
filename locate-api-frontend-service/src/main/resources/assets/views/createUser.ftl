@@ -36,6 +36,7 @@
             <input id="organisation" name="organisation" value="" autocomplete="off" class="text first-name long"
                    type="text">
         </fieldset>
+        <hr/>
 
         <h3>What type of addresses do you want to receive from the API?</h3>
         <fieldset>
@@ -74,29 +75,33 @@
                 All
             </label>
         </fieldset>
-        <h3>Do you want the full data or only the presentation block?</h3>
-        <fieldset>
-            <label for="full" class="selectable">
-                <input id="full" name="dataType" value="all" class="radio" data-validation-name="full"
-                       data-validation-type="field" data-validation-rules="nonEmpty" type="radio" checked>
-                Full
-            </label>
 
+        <hr/>
+
+        <h3>Do you want the presentation data or the full data block?</h3>
+        <fieldset>
             <label for="presentation" class="selectable">
                 <input id="presentation" name="dataType" value="presentation" class="radio"
                        data-validation-name="presentation" data-validation-type="field" data-validation-rules="nonEmpty"
                        type="radio">
                 Presentation
             </label>
-        </fieldset>
+            <label for="full" class="selectable">
+                <input id="full" name="dataType" value="all" class="radio" data-validation-name="full"
+                       data-validation-type="field" data-validation-rules="nonEmpty" type="radio" checked>
+                Full
+            </label>
+        </fieldset>  
+
         <hr/>
+
         <h2>I understand that:</h2>
 
         <p>By applying for a Locate API token I am confirming I represent a UK public sector organisation.</p>
 
         <p>Usage of the Locate API is limited to 1000 requests per calendar day.</p>
 
-        <div class="warning">Locate API is in 'alpha' stage so there are not guaranteed uptime or service levels.</div>
+        <div class="warning">Locate API is in 'alpha' stage so there are not guaranteed up-time or service levels.</div>
 
         <input id="submit" class="button next" value="Generate token" type="submit">
 
