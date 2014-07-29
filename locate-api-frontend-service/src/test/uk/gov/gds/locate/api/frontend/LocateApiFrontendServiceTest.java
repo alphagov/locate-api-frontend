@@ -11,6 +11,7 @@ import uk.gov.gds.locate.api.frontend.configuration.LocateApiFrontendConfigurati
 import uk.gov.gds.locate.api.frontend.configuration.MongoConfiguration;
 import uk.gov.gds.locate.api.frontend.healthchecks.MongoHealthCheck;
 import uk.gov.gds.locate.api.frontend.resources.CreateUserResource;
+import uk.gov.gds.locate.api.frontend.resources.ExplorerResource;
 
 import java.util.Collections;
 
@@ -43,6 +44,7 @@ public class LocateApiFrontendServiceTest {
     public void shouldAddAddressResourceToEnvironment() throws Exception {
         locateApiFrontendService.run(configuration, environment);
         verify(environment, times(1)).addResource(isA(CreateUserResource.class));
+        verify(environment, times(1)).addResource(isA(ExplorerResource.class));
     }
 
     @Test

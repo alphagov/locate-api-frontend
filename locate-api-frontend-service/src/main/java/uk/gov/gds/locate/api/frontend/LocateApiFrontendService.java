@@ -18,6 +18,7 @@ import uk.gov.gds.locate.api.frontend.healthchecks.MongoHealthCheck;
 import uk.gov.gds.locate.api.frontend.managed.ManagedMongo;
 import uk.gov.gds.locate.api.frontend.model.AuthorizationToken;
 import uk.gov.gds.locate.api.frontend.resources.CreateUserResource;
+import uk.gov.gds.locate.api.frontend.resources.ExplorerResource;
 import uk.gov.gds.locate.api.frontend.services.BearerTokenGenerationService;
 import uk.gov.gds.locate.api.frontend.tasks.MongoIndexTask;
 
@@ -62,6 +63,7 @@ public class LocateApiFrontendService extends Service<LocateApiFrontendConfigura
          * Resources
          */
         environment.addResource(new CreateUserResource(authorizationTokenDao, new BearerTokenGenerationService()));
+        environment.addResource(new ExplorerResource());
 
         /**
          * Healthchecks

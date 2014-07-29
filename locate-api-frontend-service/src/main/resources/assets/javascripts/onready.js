@@ -102,4 +102,57 @@
              });
      });
 
+    function print(obj) {
+            var html = "<pre>" + JSON.stringify(obj, null, 4) + "</pre>";
+            return html;
+        }
+
+    $('#submit-address-search').on("click", function(e) {
+         e.preventDefault();
+
+        var request_headers = {}
+        request_headers['Authorization'] = 'Bearer ' + $('#bearer_token').val();
+
+        $.ajax({
+             url : "http://localhost:9700/locate/addresses?postcode=" + $('#postcode').val(),
+             type: "GET",
+             headers : request_headers,
+             xhrFields: {withCredentials: true},
+             timeout : 10000
+           }).
+           success(function (data, status, xhrObj) {
+                var obj = JSON.parse(xhrObj.responseText);
+                $("#explorer-results").html(print(obj));
+           }).
+           error(function (xhrObj, status, errorStr) {
+                var obj = JSON.parse(xhrObj.responseText);
+                $("#explorer-results").html(print(obj));
+             });
+     });
+
+
+    $('#submit-authority-search').on("click", function(e) {
+         e.preventDefault();
+
+        var request_headers = {}
+        request_headers['Authorization'] = 'Bearer ' + $('#bearer_token').val();
+
+        $.ajax({
+             url : "http://localhost:9700/locate/authority?postcode=" + $('#postcode').val(),
+             type: "GET",
+             headers : request_headers,
+             xhrFields: {withCredentials: true},
+             timeout : 10000
+           }).
+           success(function (data, status, xhrObj) {
+                var obj = JSON.parse(xhrObj.responseText);
+                $("#explorer-results").html(print(obj));
+           }).
+           error(function (xhrObj, status, errorStr) {
+                var obj = JSON.parse(xhrObj.responseText);
+                $("#explorer-results").html(print(obj));
+             });
+     });
+
+
 }.call(this));
