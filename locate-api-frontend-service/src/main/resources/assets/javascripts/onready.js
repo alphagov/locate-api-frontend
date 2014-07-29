@@ -113,7 +113,7 @@
         request_headers['Authorization'] = 'Bearer ' + $('#bearer_token').val();
 
         $.ajax({
-             url : "http://localhost:9700/locate/addresses?postcode=" + $('#postcode').val(),
+             url : "https://locate-api.herokuapp.com/locate/addresses?postcode=" + $('#postcode').val(),
              type: "GET",
              headers : request_headers,
              xhrFields: {withCredentials: true},
@@ -137,7 +137,7 @@
         request_headers['Authorization'] = 'Bearer ' + $('#bearer_token').val();
 
         $.ajax({
-             url : "http://localhost:9700/locate/authority?postcode=" + $('#postcode').val(),
+             url : "https://locate-api.herokuapp.com/locate/authority?postcode=" + $('#postcode').val(),
              type: "GET",
              headers : request_headers,
              xhrFields: {withCredentials: true},
