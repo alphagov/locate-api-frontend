@@ -63,6 +63,7 @@
             html += "<h2>This is your credential for the locate API</h2>"
             html += '<p>Note this down now as there is no way to access it again!</p>';
             html += "<p class='credential'><em>" + obj.token + "</em></p>";
+            html += '<p>Try your token on the <a href="/locate/explorer">API explorer.</a>';
             return html;
         }
 

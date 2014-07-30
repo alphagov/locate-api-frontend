@@ -10,7 +10,6 @@
         <p>Read more about Locate and how to access the service in the <a href="https://github.com/alphagov/locate-api">technical
             documentation on GitHub.</a></p>
 
-
         <p>Test your credentials on the <a href="/locate/explorer">API explorer.</a>
         <hr/>
 
