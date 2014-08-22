@@ -94,6 +94,72 @@
             </label>
         </fieldset>  
 
+        <p>Example JSON: <span id="full-example-button" class="button">full</span> and <span id="presentation-example-button" class="button">presentation</span></p>
+
+        <div id="full-example">
+            <pre>
+                <code>
+                {
+                    "gssCode": "E09000032",
+                    "country": "England",
+                    "postcode": "sw112dr",
+                    uprn": "100023586417",
+                    "createdAt": "2014-07-03",
+                    "presentation": {
+                        "property": "Arches 11 And 12",
+                        "street": "Latchmere Road",
+                        "town": "London",
+                        "area": "Wandsworth",
+                        "postcode": "SW11 2DR"
+                    },
+                    "details": {
+                        "usrn": "22902824",
+                        "isResidential": false,
+                        "isCommercial": true,
+                        "isElectoral": false,
+                        "isPostalAddress": true,
+                        "classification": "CI03",
+                        "state": "approved",
+                        "organisation": "Mwr Motors",
+                        "primaryClassification": "Commercial",
+                        "secondaryClassification": "Industrial Application",
+                        "file": "TQ2575.csv",
+                        "blpuUpdatedAt": "2004-12-21",
+                        "blpuCreatedAt": "2001-03-19"
+                    },
+                    "location": {
+                        "lat": 51.46865944238342,
+                        "long": -0.16305944948944998
+                    },
+                    "ordering": {
+                        "paoText": "ARCHES 11 AND 12",
+                        "street": "LATCHMERE ROAD"
+                    }
+                }
+                </code>
+            </pre>
+            <span id="close-full-example">[ close ]</span>
+        </div>
+
+    <div id="presentation-example">
+        <pre>
+            <code>
+            {
+                "property": "Flat A",
+                "street": "93 Latchmere Road",
+                "locality": "Battersea",
+                "town": "London",
+                "area": "Wandsworth",
+                "postcode": "SW11 2DR",
+                "uprn": "10090499727",
+                "gssCode": "E09000032"
+            }
+            </code>
+        </pre>
+        <span id="close-presentation-example">[ close ]</span>
+    </div>
+
+
         <hr/>
 
         <h2>I understand that:</h2>

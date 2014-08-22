@@ -5,6 +5,9 @@
       $ = root.jQuery,
       GOVUK = root.GOVUK;
 
+  $('#full-example').hide();
+  $('#presentation-example').hide();
+
   $('header.no-back-link').each(function (idx, elm) {
     new GOVUK.registerToVote.BackButton(elm);
   });
@@ -53,6 +56,24 @@
 
   $("input:radio[name=queryType]").click(function() {
     queryType = $(this).val();
+  });
+
+  $('#full-example-button').on("click", function(e) {
+    $('#full-example').toggle();
+    $('#presentation-example').hide();
+  });
+
+  $('#close-full-example').on("click", function(e) {
+    $('#full-example').hide();
+  });
+
+  $('#presentation-example-button').on("click", function(e) {
+    $('#presentation-example').toggle();
+    $('#full-example').hide();
+  });
+
+  $('#close-presentation-example').on("click", function(e) {
+    $('#presentation-example').hide();
   });
 
     $('#submit').on("click", function(e) {
