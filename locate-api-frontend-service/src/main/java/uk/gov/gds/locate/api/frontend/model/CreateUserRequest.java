@@ -10,20 +10,14 @@ public class CreateUserRequest {
     private String email;
     @JsonProperty("organisation")
     private String organisation;
-    @JsonProperty("queryType")
-    private String queryType;
-    @JsonProperty("dataType")
-    private String dataType;
 
     public CreateUserRequest() {
     }
 
-    public CreateUserRequest(String name, String email, String organisation, String queryType, String dataType) {
+    public CreateUserRequest(String name, String email, String organisation) {
         this.name = name;
         this.email = email;
         this.organisation = organisation;
-        this.queryType = queryType;
-        this.dataType = dataType;
     }
 
     public String getName() {
@@ -38,16 +32,6 @@ public class CreateUserRequest {
 
     public String getOrganisation() {
         return organisation;
-    }
-
-
-    public String getQueryType() {
-        return queryType;
-    }
-
-
-    public String getDataType() {
-        return dataType;
     }
 
 }

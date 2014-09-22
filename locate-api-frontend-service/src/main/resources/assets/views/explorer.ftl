@@ -25,6 +25,28 @@
 
             <input id="postcode" name="postcode" value="" autocomplete="off" class="text long" type="text">
 
+            <label for="format">
+                Results format
+            </label>
+
+            <select id="format" name="format" value="" autocomplete="off">
+            <option value="all">All</option>
+            <option value="presentation">Presentation</option>
+            <option value="vcard">VCard</option>
+            </select>
+
+             <label for="query">
+                Query
+            </label>
+
+            <select id="query" name="query" value="" autocomplete="off">
+            <option value="all">All</option>
+            <option value="electoral">Electoral</option>
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+            <option value="residentialAndCommercial">Residential and commercial</option>
+            </select>
+
         </fieldset>
         <hr/>
 

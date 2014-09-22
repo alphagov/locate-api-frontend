@@ -100,9 +100,7 @@
          var request = {
             "name": $('#name').val(),
             "email": $('#email').val(),
-            "organisation": $('#organisation').val(),
-            "dataType": dataType,
-            "queryType": queryType
+            "organisation": $('#organisation').val()
         };
 
         $.ajax({
@@ -133,6 +131,16 @@
 
         var request_headers = {}
         request_headers['Authorization'] = 'Bearer ' + $('#bearer_token').val();
+
+        var queryString = "?postcode=" + $('#postcode').val().replace(" ","").toLowerCase();
+
+        if($('#format').val()) {
+            queryString += "&format=" + $('#format').val();
+        }
+
+        if($('#query').val()) {
+            queryString += "&query=" + $('#query').val();
+        }
 
         $.ajax({
              url : "https://locate-api.herokuapp.com/locate/addresses?postcode=" + $('#postcode').val().replace(" ","").toLowerCase(),

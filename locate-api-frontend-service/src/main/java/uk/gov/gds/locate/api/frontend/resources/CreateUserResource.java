@@ -8,8 +8,6 @@ import uk.gov.gds.locate.api.frontend.dao.AuthorizationTokenDao;
 import uk.gov.gds.locate.api.frontend.exceptions.LocateWebException;
 import uk.gov.gds.locate.api.frontend.model.AuthorizationToken;
 import uk.gov.gds.locate.api.frontend.model.CreateUserRequest;
-import uk.gov.gds.locate.api.frontend.model.DataType;
-import uk.gov.gds.locate.api.frontend.model.QueryType;
 import uk.gov.gds.locate.api.frontend.services.BearerTokenGenerationService;
 import uk.gov.gds.locate.api.frontend.views.CompleteView;
 import uk.gov.gds.locate.api.frontend.views.CreateUserView;
@@ -55,9 +53,7 @@ public class CreateUserResource {
                 request.getName(),
                 request.getEmail(),
                 request.getOrganisation(),
-                bearerTokenGenerationService.newToken(),
-                QueryType.parse(request.getQueryType()),
-                DataType.parse(request.getDataType())
+                bearerTokenGenerationService.newToken()
         );
 
         createUser(token);
@@ -72,11 +68,9 @@ public class CreateUserResource {
             @Auth String user,
             @FormParam("email") String email,
             @FormParam("name") String name,
-            @FormParam("organisation") String organisation,
-            @FormParam("queryType") String queryType,
-            @FormParam("dataType") String dataType
+            @FormParam("organisation") String organisation
     ) throws Exception {
-        CreateUserRequest request = new CreateUserRequest(name, email, organisation, queryType, dataType);
+        CreateUserRequest request = new CreateUserRequest(name, email, organisation);
 
         List<String> errors = validateRequest(request);
 
@@ -86,9 +80,7 @@ public class CreateUserResource {
                     request.getName(),
                     request.getEmail(),
                     request.getOrganisation(),
-                    bearerTokenGenerationService.newToken(),
-                    QueryType.parse(request.getQueryType()),
-                    DataType.parse(request.getDataType())
+                    bearerTokenGenerationService.newToken()
             );
             createUser(token);
             return new CompleteView(token, errors);

@@ -97,7 +97,7 @@ public class CreateUserResourceTest extends ResourceTest {
         when(configuration.getPassword()).thenReturn("password");
         when(bearerTokenGenerationService.newToken()).thenReturn("this is a token");
         when(dao.create(any(AuthorizationToken.class))).thenReturn(true);
-        CreateUserRequest request = new CreateUserRequest("name", "real@email.gov.uk", "org", "all", "all");
+        CreateUserRequest request = new CreateUserRequest("name", "real@email.gov.uk", "org");
 
         String jsonRequest = mapper.writeValueAsString(request);
         String response = client().resource("/locate/create-user").header("Authorization", validBasicAuthHeader).header("Content-type", "application/json").post(String.class, jsonRequest);
@@ -109,7 +109,7 @@ public class CreateUserResourceTest extends ResourceTest {
     @Test
     public void shouldRejectAnInvalidCreateRequest() throws JsonProcessingException {
         when(dao.create(any(AuthorizationToken.class))).thenReturn(true);
-        CreateUserRequest request = new CreateUserRequest("", "real@email.gov.uk", "org", "all", "all");
+        CreateUserRequest request = new CreateUserRequest("", "real@email.gov.uk", "org");
 
         String jsonRequest = mapper.writeValueAsString(request);
         try {
@@ -125,7 +125,7 @@ public class CreateUserResourceTest extends ResourceTest {
     @Test
     public void shouldRejectARequestThatHasADuplicateIdentifier() throws JsonProcessingException {
         when(dao.create(any(AuthorizationToken.class))).thenThrow(new MongoException("authorizationToken.$identifier_index  dup key"));
-        CreateUserRequest request = new CreateUserRequest("name", "real@email.gov.uk", "org", "all", "all");
+        CreateUserRequest request = new CreateUserRequest("name", "real@email.gov.uk", "org");
 
         String jsonRequest = mapper.writeValueAsString(request);
         try {
