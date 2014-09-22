@@ -143,7 +143,7 @@
         }
 
         $.ajax({
-             url : "https://locate-api.herokuapp.com/locate/addresses?postcode=" + $('#postcode').val().replace(" ","").toLowerCase(),
+             url : "https://locate-api.herokuapp.com/locate/addresses" + queryString,
              type: "GET",
              headers : request_headers,
              xhrFields: {withCredentials: true},
