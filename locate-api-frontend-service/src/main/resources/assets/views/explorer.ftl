@@ -55,6 +55,8 @@
 
 
         <h2>Results</h2>
+        <div id="example-query-title"><p><em>URL:</em></p></div>
+        <div id="example-query" aria-live="polite"></div>
         <div id="explorer-results" aria-live="polite"></div>
 
     </article>

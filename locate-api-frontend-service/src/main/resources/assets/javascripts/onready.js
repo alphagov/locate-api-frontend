@@ -7,6 +7,7 @@
 
   $('#full-example').hide();
   $('#presentation-example').hide();
+  $("#example-query-title").hide();
 
   $('header.no-back-link').each(function (idx, elm) {
     new GOVUK.registerToVote.BackButton(elm);
@@ -141,6 +142,9 @@
         if($('#query').val()) {
             queryString += "&query=" + $('#query').val();
         }
+
+        $("#example-query-title").show();
+        $("#example-query").html('<div class="credential">https://locate-api.herokuapp.com/locate/addresses' + queryString + '</div>');
 
         $.ajax({
              url : "https://locate-api.herokuapp.com/locate/addresses" + queryString,
